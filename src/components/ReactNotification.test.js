@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import ReactNotification from './ReactNotification';
 
 describe('React Notification', () => {
@@ -48,6 +48,19 @@ describe('React Notification', () => {
 
     notification.find('.close').simulate('click');
     expect(notification.state().isShowing).toBeFalsy();
+    expect(notification.html()).toEqual('<span></span>');
+  });
+
+  it('auto hide in 2000ms', () => {
+    jest.useFakeTimers();
+    const notification = mount(<ReactNotification
+                                  title={mockTitle}
+                                  content={mockContent}
+                                  autoHide={2000}
+                                />);
+    expect(notification.state().isShowing).toEqual(true);
+    jest.runTimersToTime(2501); //Timer plus animation time
+    expect(notification.state().isShowing).toEqual(false);
     expect(notification.html()).toEqual('<span></span>');
   });
 });

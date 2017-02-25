@@ -46,6 +46,13 @@ storiesOf('Notification element', module)
       stripColor='#B4D455'
     />
   ))
+  .add('Auto hide after 1500ms', () => (
+    <ReactNotification
+      title='Auto hide after 1500ms'
+      content='Read fast im leaving in 1500ms....'
+      autoHide={1500}
+    />
+  ))
   .add('Custom Animation #TODO', () => (
     <ReactNotification
       title='My first notification'

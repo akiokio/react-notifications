@@ -14,6 +14,14 @@ class ReactNotification extends React.Component{
       isShowing: true,
     }
   }
+
+  componentDidMount() {
+    if (this.props.autoHide) {
+      setTimeout(() => {
+        this.hide();
+      }, this.props.autoHide);
+    }
+  }
   
   hide(){
     this.setState({ isShowing: false });
@@ -70,6 +78,7 @@ ReactNotification.propTypes = {
   fromRight: React.PropTypes.string,
   fromBottom: React.PropTypes.string,
   fromLeft: React.PropTypes.string,
+  autoHide: React.PropTypes.number,
 };
 
 ReactNotification.defaultProps = {

@@ -3,18 +3,19 @@ import { shallow } from 'enzyme';
 import ReactNotification from './ReactNotification';
 
 describe('React Notification', () => {
+  const mockTitle = 'Mock Title';
+  const mockContent = 'Mock Content';
+
   it('renders without crashing', () => {
-    const mockTitle = 'Mock Title';
-    const mockContent = 'Mock Content';
     const notification = shallow(<ReactNotification
-                                          title={mockTitle}
-                                          content={mockContent}
-                                        />);
+                                  title={mockTitle}
+                                  content={mockContent}
+                                />);
     
     // Tests props, they are diffrent from the final html
     expect(notification.instance().props.title).toBeDefined();
     expect(notification.instance().props.content).toBeDefined();
-    expect(notification.instance().props.stripColor).toEqual('#fafafa');
+    expect(notification.instance().props.stripColor).toEqual('#00bcd4');
 
     // Test the rendered html
     // Find for one element with the class title
@@ -24,5 +25,16 @@ describe('React Notification', () => {
 
     expect(notification.find('.content')).toHaveLength(1);
     expect(notification.find('.content').text()).toEqual(mockContent);    
+  });
+
+  it('renders with a diffrent color strip', () => {
+    const stripCustomColor = '#B4D455';
+    const notification = shallow(<ReactNotification
+                                  title={mockTitle}
+                                  content={mockContent}
+                                  stripColor={stripCustomColor}
+                                />);
+
+    expect(notification.find('.strip').html()).toEqual(`<span class="strip" style="background:${stripCustomColor};"></span>`);
   });
 });

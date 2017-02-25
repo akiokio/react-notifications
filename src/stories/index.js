@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf, action, linkTo } from '@kadira/storybook';
+import { storiesOf } from '@kadira/storybook';
 import ReactNotifications from '../components/ReactNotifications';
 import ReactNotification from '../components/ReactNotification';
 
@@ -10,7 +10,10 @@ storiesOf('Notification Wrapper', module)
 
 storiesOf('Notification element', module)
   .add('Basic', () => (
-    <ReactNotification title='My first notification' content='Lorem ipsum dor asimet' />
+    <ReactNotification
+      title='My first notification'
+      content='Lorem ipsum dor asimet'
+    />
   ))
   .add('Different Strip Color', () => (
     <ReactNotification
@@ -23,5 +26,29 @@ storiesOf('Notification element', module)
     <ReactNotification
       title='So this happened'
       content='Lorem ipsum dolor sit amet, has at nihil clita. Sea ei ancillae luptatum, has cu aliquid constituam. Habemus fabellas accusamus et qui. Cu mea hinc aperiam tincidunt, habeo choro est id. 🚀'
+    />
+  ))
+  .add('Position top left', () => (
+    <ReactNotification
+      title='Left aligned'
+      content='Lorem ipsum dolor sit amet, has at nihil clita. 🚀'
+      fromTop='10px'
+      fromLeft='10px'
+    />
+  ))
+  .add('Position Bottom left', () => (
+    <ReactNotification
+      title='Left aligned'
+      content='Lorem ipsum dolor sit amet, has at nihil clita. Sea ei ancillae luptatum, has cu aliquid constituam. Habemus fabellas accusamus et qui. Cu mea hinc aperiam tincidunt, habeo choro est id. 🔥'
+      fromTop='auto'
+      fromBottom='10px'
+      fromLeft='10px'
+      stripColor='#B4D455'
+    />
+  ))
+  .add('Custom Animation #TODO', () => (
+    <ReactNotification
+      title='My first notification'
+      content='Lorem ipsum dor asimet'
     />
   ));

@@ -24,7 +24,9 @@ describe('React Notification', () => {
     expect(notification.find('.title').text()).toEqual(mockTitle);
 
     expect(notification.find('.content')).toHaveLength(1);
-    expect(notification.find('.content').text()).toEqual(mockContent);    
+    expect(notification.find('.content').text()).toEqual(mockContent);
+
+    expect(notification.find('.close')).toHaveLength(1);
   });
 
   it('renders with a diffrent color strip', () => {
@@ -36,5 +38,16 @@ describe('React Notification', () => {
                                 />);
 
     expect(notification.find('.strip').html()).toEqual(`<span class="strip" style="background:${stripCustomColor};"></span>`);
+  });
+
+  it('close when click on hide', () => {
+    const notification = shallow(<ReactNotification
+                                  title={mockTitle}
+                                  content={mockContent}
+                                />);
+
+    notification.find('.close').simulate('click');
+    expect(notification.state().isShowing).toBeFalsy();
+    expect(notification.html()).toEqual('<span></span>');
   });
 });

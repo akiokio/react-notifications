@@ -1,4 +1,4 @@
-p {
+.react-notification p {
   margin: 10px 0;
 }
 
@@ -8,8 +8,6 @@ p {
   flex-flow: row wrap;
   
   position: absolute;
-  top: 25px;
-  right: 25px;
   overflow: hidden;
 
   padding: 10px;
@@ -17,7 +15,7 @@ p {
   box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
 }
 
-.strip {
+.react-notification .strip {
   position: absolute;
   width: 100%;
   height: 5px;
@@ -26,7 +24,7 @@ p {
   content: "";
 }
 
-.close {
+.react-notification .close {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -37,7 +35,7 @@ p {
   cursor: pointer;
 }
 
-.title {
+.react-notification .title {
   width: 100%;
   font-weight: bold;
   border-bottom: 1px solid #f1f1f1;
@@ -46,23 +44,23 @@ p {
 
 /* Animations */
 
-.default-appear {
+.react-notification-default-appear {
   opacity: 0.01;
   transform: translateY(50px);
 }
 
-.default-appear.default-appear-active {
+.react-notification-default-appear.react-notification-default-appear-active {
   opacity: 1;
   transition: all 500ms cubic-bezier(1, 0, 0, 1);
   transform: translateY(0px);
 }
 
-.default-leave {
+.react-notification-default-leave {
   opacity: 1;
   transform: translateY(0px);
 }
 
-.default-leave.default-leave-active {
+.react-notification-default-leave.react-notification-default-leave-active {
   opacity: 0.01;
   transition: all 300ms cubic-bezier(1, 0, 0, 1);
   transform: translateY(50px);

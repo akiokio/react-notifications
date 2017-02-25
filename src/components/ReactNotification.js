@@ -25,7 +25,11 @@ class ReactNotification extends React.Component{
       content,
       stripColor,
       customClass,
-      animation
+      animation,
+      fromTop,
+      fromRight,
+      fromBottom,
+      fromLeft,
     } = this.props;
     return (
       <ReactCSSTransitionGroup
@@ -37,7 +41,12 @@ class ReactNotification extends React.Component{
         transitionLeaveTimeout={500}
       >
         { this.state.isShowing 
-          ? <div className={`react-notification ${customClass}`}>
+          ? <div className={`react-notification ${customClass}`} style={{
+              top: fromTop,
+              right: fromRight,
+              bottom: fromBottom,
+              left: fromLeft,
+            }}>
               <span className="strip" style={{ background: stripColor }}></span>
               <a className="close" onClick={this.hide}>
                 <img src={closeIco} alt="close notification"/>
@@ -46,7 +55,6 @@ class ReactNotification extends React.Component{
               <p className="content">{content}</p>
             </div>
           : null}
-        
       </ReactCSSTransitionGroup>
     )
   }
@@ -58,12 +66,20 @@ ReactNotification.propTypes = {
   stripColor: React.PropTypes.string,
   customClass: React.PropTypes.string,
   animation: React.PropTypes.string,
+  fromTop: React.PropTypes.string,
+  fromRight: React.PropTypes.string,
+  fromBottom: React.PropTypes.string,
+  fromLeft: React.PropTypes.string,
 };
 
 ReactNotification.defaultProps = {
   stripColor: '#00bcd4',
   customClass: '',
-  animation: 'default'
+  animation: 'react-notification-default',
+  fromTop: '25px',
+  fromRight: '25px',
+  fromBottom: 'auto',
+  fromLeft: 'auto',
 }
 
 export default ReactNotification;

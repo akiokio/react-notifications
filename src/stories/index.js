@@ -3,6 +3,8 @@ import { storiesOf } from '@kadira/storybook';
 import ReactNotifications from '../components/ReactNotifications';
 import Notification from '../components/ReactNotification';
 
+import './animation-example.css';
+
 storiesOf('Notification Wrapper', module)
   .add('Basic', () => (
     <ReactNotifications addNotification={() => {}} />
@@ -53,9 +55,13 @@ storiesOf('Notification element', module)
       autoHide={1500}
     />
   ))
-  .add('Custom Animation #TODO', () => (
+  .add('Custom Animation', () => (
     <Notification
       title='My first notification'
       content='Lorem ipsum dor asimet'
+      animation='from-left'
+      fromTop='auto'
+      fromBottom='10px'
+      fromLeft='10px'
     />
   ));

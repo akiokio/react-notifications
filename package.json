@@ -29,8 +29,7 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public -o build",
     "predeploy": "npm run build-storybook",
-    "deploy": "gh-pages -d build",
-    "deploy:npm": "yarn build:module && npm publish"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

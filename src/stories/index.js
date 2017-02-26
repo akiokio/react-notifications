@@ -55,7 +55,7 @@ storiesOf('Notification element', module)
       autoHide={1500}
     />
   ))
-  .add('Custom Animation', () => (
+  .add('Custom Animation from left', () => (
     <Notification
       title='My first notification'
       content='Lorem ipsum dor asimet'

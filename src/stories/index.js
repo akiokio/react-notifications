@@ -1,14 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-import ReactNotifications from '../components/ReactNotifications';
 import Notification from '../components/ReactNotification';
 
 import './animation-example.css';
-
-storiesOf('Notification Wrapper', module)
-  .add('Basic', () => (
-    <ReactNotifications addNotification={() => {}} />
-  ));
 
 storiesOf('Notification element', module)
   .add('Basic', () => (
@@ -22,6 +16,13 @@ storiesOf('Notification element', module)
       title='My first notification'
       content='Lorem ipsum dor asimet'
       stripColor='#B4D455'
+    />
+  ))
+  .add('Custom class', () => (
+    <Notification
+      title='My first notification'
+      content='Lorem ipsum dor asimet'
+      customClass='my-notification'
     />
   ))
   .add('Big content', () => (

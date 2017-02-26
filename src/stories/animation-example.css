@@ -1,3 +1,28 @@
+/* Custom css notification */
+.my-notification {
+  border-radius: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my-notification .strip,
+.my-notification .title {
+  display: none;
+}
+
+.my-notification .close {
+  order: 2;
+  align-self: flex-end;
+  position: initial;
+}
+
+.my-notification .content {
+  order: 1;
+  margin: 0;
+}
+
+/* Custom animation */
 .from-left-appear {
   opacity: 0.01;
   transform: translateX(-100px);

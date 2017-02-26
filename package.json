@@ -1,5 +1,5 @@
 {
-  "name": "react-notifications",
+  "name": "akiokio-react-notification",
   "version": "0.1.0",
   "main": "dist/ReactNotification.js",
   "engines": {
@@ -29,7 +29,8 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public -o build",
     "predeploy": "npm run build-storybook",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "deploy:npm": "yarn build:module && npm publish"
   },
   "eslintConfig": {
     "extends": "react-app"

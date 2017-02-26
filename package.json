@@ -1,6 +1,6 @@
 {
   "name": "akiokio-react-notification",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/ReactNotification.js",
   "engines": {
     "node": ">=6.0.0"

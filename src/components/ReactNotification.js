@@ -17,9 +17,15 @@ class Notification extends React.Component{
 
   componentDidMount() {
     if (this.props.autoHide) {
-      setTimeout(() => {
+      this.timeout = setTimeout(() => {
         this.hide();
       }, this.props.autoHide);
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
     }
   }
   
@@ -89,6 +95,7 @@ Notification.defaultProps = {
   fromRight: '25px',
   fromBottom: 'auto',
   fromLeft: 'auto',
+  autoHide: null
 }
 
 export default Notification;

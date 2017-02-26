@@ -1,7 +1,10 @@
 {
   "name": "react-notifications",
   "version": "0.1.0",
-  "private": true,
+  "main": "dist/ReactNotification.js",
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
     "enzyme": "^2.7.1",
@@ -18,7 +21,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:module": "NODE_ENV=production babel src/components --presets react-app --out-dir dist --copy-files",
     "test": "react-scripts test --env=jsdom",
+    "coverage": "react-scripts test --env=jsdom --coverage --collectCoverageFrom=src/components/*.js",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public -o build",

@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import ReactNotification from './ReactNotification';
+import Notification from './ReactNotification';
 
 describe('React Notification', () => {
   const mockTitle = 'Mock Title';
   const mockContent = 'Mock Content';
 
   it('renders without crashing', () => {
-    const notification = shallow(<ReactNotification
+    const notification = shallow(<Notification
                                   title={mockTitle}
                                   content={mockContent}
                                 />);
@@ -31,7 +31,7 @@ describe('React Notification', () => {
 
   it('renders with a diffrent color strip', () => {
     const stripCustomColor = '#B4D455';
-    const notification = shallow(<ReactNotification
+    const notification = shallow(<Notification
                                   title={mockTitle}
                                   content={mockContent}
                                   stripColor={stripCustomColor}
@@ -41,7 +41,7 @@ describe('React Notification', () => {
   });
 
   it('close when click on hide', () => {
-    const notification = shallow(<ReactNotification
+    const notification = shallow(<Notification
                                   title={mockTitle}
                                   content={mockContent}
                                 />);
@@ -53,7 +53,7 @@ describe('React Notification', () => {
 
   it('auto hide in 2000ms', () => {
     jest.useFakeTimers();
-    const notification = mount(<ReactNotification
+    const notification = mount(<Notification
                                   title={mockTitle}
                                   content={mockContent}
                                   autoHide={2000}

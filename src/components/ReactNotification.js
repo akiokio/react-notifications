@@ -5,7 +5,7 @@ import 'normalize.css';
 import closeIco from './closeIcon.svg';
 import './ReactNotification.css';
 
-class ReactNotification extends React.Component{
+class Notification extends React.Component{
   constructor(props) {
     super(props);
     this.hide = this.hide.bind(this);
@@ -68,7 +68,7 @@ class ReactNotification extends React.Component{
   }
 }
 
-ReactNotification.propTypes = {
+Notification.propTypes = {
   title: React.PropTypes.string.isRequired,
   content: React.PropTypes.string.isRequired,
   stripColor: React.PropTypes.string,
@@ -81,7 +81,7 @@ ReactNotification.propTypes = {
   autoHide: React.PropTypes.number,
 };
 
-ReactNotification.defaultProps = {
+Notification.defaultProps = {
   stripColor: '#00bcd4',
   customClass: '',
   animation: 'react-notification-default',
@@ -91,4 +91,4 @@ ReactNotification.defaultProps = {
   fromLeft: 'auto',
 }
 
-export default ReactNotification;
+export default Notification;

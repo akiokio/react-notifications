@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import ReactNotifications from '../components/ReactNotifications';
-import ReactNotification from '../components/ReactNotification';
+import Notification from '../components/ReactNotification';
 
 storiesOf('Notification Wrapper', module)
   .add('Basic', () => (
@@ -10,26 +10,26 @@ storiesOf('Notification Wrapper', module)
 
 storiesOf('Notification element', module)
   .add('Basic', () => (
-    <ReactNotification
+    <Notification
       title='My first notification'
       content='Lorem ipsum dor asimet'
     />
   ))
   .add('Different Strip Color', () => (
-    <ReactNotification
+    <Notification
       title='My first notification'
       content='Lorem ipsum dor asimet'
       stripColor='#B4D455'
     />
   ))
   .add('Big content', () => (
-    <ReactNotification
+    <Notification
       title='So this happened'
       content='Lorem ipsum dolor sit amet, has at nihil clita. Sea ei ancillae luptatum, has cu aliquid constituam. Habemus fabellas accusamus et qui. Cu mea hinc aperiam tincidunt, habeo choro est id. 🚀'
     />
   ))
   .add('Position top left', () => (
-    <ReactNotification
+    <Notification
       title='Left aligned'
       content='Lorem ipsum dolor sit amet, has at nihil clita. 🚀'
       fromTop='10px'
@@ -37,7 +37,7 @@ storiesOf('Notification element', module)
     />
   ))
   .add('Position Bottom left', () => (
-    <ReactNotification
+    <Notification
       title='Left aligned'
       content='Lorem ipsum dolor sit amet, has at nihil clita. Sea ei ancillae luptatum, has cu aliquid constituam. Habemus fabellas accusamus et qui. Cu mea hinc aperiam tincidunt, habeo choro est id. 🔥'
       fromTop='auto'
@@ -47,14 +47,14 @@ storiesOf('Notification element', module)
     />
   ))
   .add('Auto hide after 1500ms', () => (
-    <ReactNotification
+    <Notification
       title='Auto hide after 1500ms'
       content='Read fast im leaving in 1500ms....'
       autoHide={1500}
     />
   ))
   .add('Custom Animation #TODO', () => (
-    <ReactNotification
+    <Notification
       title='My first notification'
       content='Lorem ipsum dor asimet'
     />

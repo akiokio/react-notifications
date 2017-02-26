@@ -1,0 +1,67 @@
+.react-notification p {
+  margin: 10px 0;
+}
+
+.react-notification {
+  width: 350px;
+  display: flex;
+  flex-flow: row wrap;
+  
+  position: absolute;
+  overflow: hidden;
+
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+}
+
+.react-notification .strip {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: 0;
+  left: 0;
+  content: "";
+}
+
+.react-notification .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  
+  width: 15px;
+  height: 15px;
+  display: block;
+  cursor: pointer;
+}
+
+.react-notification .title {
+  width: 100%;
+  font-weight: bold;
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 5px;
+}
+
+/* Animations */
+
+.react-notification-default-appear {
+  opacity: 0.01;
+  transform: translateY(50px);
+}
+
+.react-notification-default-appear.react-notification-default-appear-active {
+  opacity: 1;
+  transition: all 500ms cubic-bezier(1, 0, 0, 1);
+  transform: translateY(0px);
+}
+
+.react-notification-default-leave {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.react-notification-default-leave.react-notification-default-leave-active {
+  opacity: 0.01;
+  transition: all 500ms cubic-bezier(1, 0, 0, 1);
+  transform: translateY(50px);
+}

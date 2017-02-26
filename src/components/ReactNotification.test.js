@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import sinon from 'sinon';
 import Notification from './ReactNotification';
 
 describe('React Notification', () => {
@@ -62,5 +63,18 @@ describe('React Notification', () => {
     jest.runTimersToTime(2501); //Timer plus animation time
     expect(notification.state().isShowing).toEqual(false);
     expect(notification.html()).toEqual('<span></span>');
+  });
+
+  it('remove timeout if component is unmounting', () => {
+    jest.useFakeTimers();
+    const notification = mount(<Notification
+                                  title={mockTitle}
+                                  content={mockContent}
+                                  autoHide={2000}
+                                />);
+    sinon.spy(Notification.prototype, 'componentWillUnmount');
+    expect(notification.instance().timeout).toBeTruthy();
+    notification.unmount();
+    expect(Notification.prototype.componentWillUnmount.calledOnce).toBe(true);    
   });
 });
